@@ -4,7 +4,9 @@ const router = express.Router();
 const Problem = require("../models/Problem");
 
 router.get("/", (req, res) => {
-  Problem.findAll()
+  Problem.findAll({
+    limit: 10,
+  })
     .then((problems) => res.status(200).send(JSON.stringify(problems)))
     .catch((err) => res.status(400).send(err));
 });
@@ -24,6 +26,7 @@ router.post("/", async (req, res) => {
     res.status(400).send(err.details[0].message);
     return;
   }
+
   let { videoID, track, artist, startSeconds, endSeconds } = req.body;
 
   Problem.create({
