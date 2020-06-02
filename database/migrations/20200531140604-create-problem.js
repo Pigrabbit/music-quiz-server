@@ -11,7 +11,6 @@ module.exports = {
       videoID: {
         type: Sequelize.STRING(20),
         allowNull: false,
-        unique: true,
       },
       track: {
         type: Sequelize.STRING(50),

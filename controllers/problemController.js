@@ -25,8 +25,7 @@ exports.problemCreatePost = async (req, res) => {
     return;
   }
 
-  let { videoID, track, artist, startSeconds, endSeconds } = req.body;
-
+  const { videoID, track, artist, startSeconds, endSeconds } = req.body;
   models.Problem.create({
     videoID,
     track,
