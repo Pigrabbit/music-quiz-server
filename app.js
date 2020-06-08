@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", async (req, res) => {
-  res.send("hello");
+  res.send("music-quiz-app API server");
 });
 
 app.use("/api/problems", ProblemRouter);
