@@ -1,0 +1,1 @@
+docker run -d -it -p 49160:3900 music-quiz-server
