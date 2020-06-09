@@ -4,7 +4,7 @@ const problemService = require("../services/problemService");
 const getProblemList = async (req, res) => {
   try {
     const fetchedProblem = await problemService.fetchRandomProblem();
-    return res.status(200).send(fetchedProblem);
+    return res.status(200).send(JSON.stringify(fetchedProblem));
   } catch (err) {
     return res.status(400).send(err);
   }
