@@ -1,0 +1,1 @@
+docker ps -q --filter ancestor="music-quiz-server" | xargs -r docker stop
