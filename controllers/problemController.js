@@ -1,13 +1,13 @@
-const models = require("../database/models");
 const Joi = require("@hapi/joi");
 const problemService = require("../services/problemService");
 
-const getProblemList = (req, res) => {
-  models.Problem.findAll({
-    limit: 10,
-  })
-    .then((problems) => res.status(200).send(JSON.stringify(problems)))
-    .catch((err) => res.status(400).send(err));
+const getProblemList = async (req, res) => {
+  try {
+    const fetchedProblem = await problemService.fetchRandomProblem();
+    return res.status(200).send(fetchedProblem);
+  } catch (err) {
+    return res.status(400).send(err);
+  }
 };
 
 const postCreateProblem = async (req, res) => {
