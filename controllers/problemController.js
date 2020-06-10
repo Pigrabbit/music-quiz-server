@@ -25,8 +25,8 @@ const postCreateProblem = async (req, res) => {
   }
 
   try {
-    const problem = await problemService.createProblem(problemDTO);
-    return res.status(201).send(problem);
+    const problems = await problemService.createProblem(problemDTO);
+    return res.status(201).send(problems);
   } catch (err) {
     return res.status(400).send(err);
   }

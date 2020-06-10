@@ -8,7 +8,7 @@ const fetchRandomProblem = async () => {
     order: [[Sequelize.fn("RAND")]],
   });
 
-  return { problem: fetchedProblem };
+  return { problems: fetchedProblem };
 };
 
 const createProblem = async (problem) => {
